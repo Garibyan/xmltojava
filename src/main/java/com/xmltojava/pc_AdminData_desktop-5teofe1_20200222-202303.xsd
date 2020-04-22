@@ -1,0 +1,1660 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://guidewire.com/pc/exim/import" xmlns:import="http://guidewire.com/pc/exim/import">
+    <xs:element name="import">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element ref="import:Address"/>
+                <xs:element ref="import:Credential"/>
+                <xs:element ref="import:Group"/>
+                <xs:element ref="import:Organization"/>
+                <xs:element ref="import:ProducerCode"/>
+                <xs:element ref="import:Region"/>
+                <xs:element ref="import:Role"/>
+                <xs:element ref="import:SecurityZone"/>
+                <xs:element ref="import:UWAuthorityProfile"/>
+                <xs:element ref="import:User"/>
+                <xs:element ref="import:UserSettings"/>
+                <xs:element ref="import:ActivityPattern"/>
+                <xs:element ref="import:AssignableQueue"/>
+                <xs:element ref="import:Company"/>
+                <xs:element ref="import:UWIssueType"/>
+                <xs:element ref="import:UserContact"/>
+            </xs:choice>
+            <xs:attribute name="usePeriodicFlushes" use="required" type="xs:boolean"/>
+            <xs:attribute name="version" use="required" type="xs:NCName"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ActivityPattern">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:ActivityClass"/>
+                <xs:element ref="import:AssignedQueue"/>
+                <xs:element ref="import:AutomatedOnly"/>
+                <xs:element ref="import:Category"/>
+                <xs:element ref="import:Code"/>
+                <xs:element ref="import:Command"/>
+                <xs:element ref="import:Description"/>
+                <xs:element ref="import:Description_L10N_ARRAY"/>
+                <xs:element ref="import:DocumentTemplate"/>
+                <xs:element ref="import:EmailTemplate"/>
+                <xs:element ref="import:EscBusCalLocPath"/>
+                <xs:element ref="import:EscalationBusCalTag"/>
+                <xs:element ref="import:EscalationDays"/>
+                <xs:element ref="import:EscalationHours"/>
+                <xs:element ref="import:EscalationInclDays"/>
+                <xs:element ref="import:EscalationStartPt"/>
+                <xs:element ref="import:Mandatory"/>
+                <xs:element ref="import:PatternLevel"/>
+                <xs:element ref="import:Priority"/>
+                <xs:element ref="import:Recurring"/>
+                <xs:element ref="import:ReturnDaysRgs"/>
+                <xs:element ref="import:ReturnHoursRgs"/>
+                <xs:element ref="import:ReturnInclDaysRgs"/>
+                <xs:element ref="import:ReturnToQueueRgs"/>
+                <xs:element ref="import:ShortSubject"/>
+                <xs:element ref="import:ShortSubject_L10N_ARRAY"/>
+                <xs:element ref="import:Subject"/>
+                <xs:element ref="import:Subject_L10N_ARRAY"/>
+                <xs:element ref="import:TargetBusCalLocPath"/>
+                <xs:element ref="import:TargetBusCalTag"/>
+                <xs:element ref="import:TargetDays"/>
+                <xs:element ref="import:TargetHours"/>
+                <xs:element ref="import:TargetIncludeDays"/>
+                <xs:element ref="import:TargetStartPoint"/>
+                <xs:element ref="import:Type"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ActivityClass" type="xs:NCName"/>
+    <xs:element name="AssignedQueue">
+        <xs:complexType>
+            <xs:attribute name="public-id" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="AutomatedOnly" type="xs:boolean"/>
+    <xs:element name="Command">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="DocumentTemplate">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="EmailTemplate">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="EscBusCalLocPath">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="EscalationBusCalTag">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="EscalationDays" type="xs:string"/>
+    <xs:element name="EscalationHours" type="xs:string"/>
+    <xs:element name="EscalationInclDays" type="xs:string"/>
+    <xs:element name="EscalationStartPt" type="xs:string"/>
+    <xs:element name="Mandatory" type="xs:boolean"/>
+    <xs:element name="PatternLevel" type="xs:NCName"/>
+    <xs:element name="Priority" type="xs:NCName"/>
+    <xs:element name="Recurring" type="xs:boolean"/>
+    <xs:element name="ReturnDaysRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="ReturnHoursRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="ReturnInclDaysRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="ReturnToQueueRgs" type="xs:string"/>
+    <xs:element name="ShortSubject" type="xs:string"/>
+    <xs:element name="ShortSubject_L10N_ARRAY">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="Subject" type="xs:string"/>
+    <xs:element name="Subject_L10N_ARRAY">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="import:ActivityPattern_Subject_L10N"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ActivityPattern_Subject_L10N">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:Language"/>
+                <xs:element ref="import:Owner"/>
+                <xs:element ref="import:Value"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="TargetBusCalLocPath">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="TargetBusCalTag">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="TargetDays" type="xs:string"/>
+    <xs:element name="TargetHours">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="TargetIncludeDays" type="xs:string"/>
+    <xs:element name="TargetStartPoint" type="xs:string"/>
+    <xs:element name="AssignableQueue">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:Description"/>
+                <xs:element ref="import:Group"/>
+                <xs:element ref="import:LockingColumn"/>
+                <xs:element ref="import:Name"/>
+                <xs:element ref="import:SubGroupVisible"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="LockingColumn" type="xs:integer"/>
+    <xs:element name="SubGroupVisible" type="xs:boolean"/>
+    <xs:element name="Company">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:AccountHolderCount"/>
+                <xs:element ref="import:AddressBookUID"/>
+                <xs:element ref="import:ArchiveDate"/>
+                <xs:element ref="import:ArchiveFailure"/>
+                <xs:element ref="import:ArchiveFailureDetails"/>
+                <xs:element ref="import:ArchivePartition"/>
+                <xs:element ref="import:ArchiveSchemaInfo"/>
+                <xs:element ref="import:ArchiveState"/>
+                <xs:element ref="import:AutoSync"/>
+                <xs:element ref="import:BatchIdRgs"/>
+                <xs:element ref="import:BlackListTypeRgs"/>
+                <xs:element ref="import:CategoryScores"/>
+                <xs:element ref="import:ContactAddresses"/>
+                <xs:element ref="import:CorrectionAllowed"/>
+                <xs:element ref="import:CountryRgs"/>
+                <xs:element ref="import:DivisionCodeRgs"/>
+                <xs:element ref="import:DoNotDestroy"/>
+                <xs:element ref="import:DwhUploadedRgs"/>
+                <xs:element ref="import:EmailAddress1"/>
+                <xs:element ref="import:EmailAddress2"/>
+                <xs:element ref="import:ExcludeReason"/>
+                <xs:element ref="import:ExcludedFromArchive"/>
+                <xs:element ref="import:ExternalID"/>
+                <xs:element ref="import:ExternalVersion"/>
+                <xs:element ref="import:FaxPhone"/>
+                <xs:element ref="import:FaxPhoneCountry"/>
+                <xs:element ref="import:FaxPhoneExtension"/>
+                <xs:element ref="import:HomePhone"/>
+                <xs:element ref="import:HomePhoneCountry"/>
+                <xs:element ref="import:HomePhoneExtension"/>
+                <xs:element ref="import:INNRgs"/>
+                <xs:element ref="import:IdDwh"/>
+                <xs:element ref="import:IdRgs"/>
+                <xs:element ref="import:InBlackListRgs"/>
+                <xs:element ref="import:LastUpdateTime"/>
+                <xs:element ref="import:LnrDwhRgs"/>
+                <xs:element ref="import:LoadRelatedContacts"/>
+                <xs:element ref="import:Name"/>
+                <xs:element ref="import:NameKanji"/>
+                <xs:element ref="import:Notes"/>
+                <xs:element ref="import:OGRNRgs"/>
+                <xs:element ref="import:OPFRgs"/>
+                <xs:element ref="import:ObfuscatedInternal"/>
+                <xs:element ref="import:Preferred"/>
+                <xs:element ref="import:PreferredCurrency"/>
+                <xs:element ref="import:PreferredSettlementCurrency"/>
+                <xs:element ref="import:PrimaryAddress"/>
+                <xs:element ref="import:PrimaryContactPhoneRgs"/>
+                <xs:element ref="import:PrimaryLanguage"/>
+                <xs:element ref="import:PrimaryLocale"/>
+                <xs:element ref="import:PrimaryMailRgs"/>
+                <xs:element ref="import:PrimaryPhone"/>
+                <xs:element ref="import:RegionCodeRgs"/>
+                <xs:element ref="import:RegistrationAddressRgs"/>
+                <xs:element ref="import:RelevanceDateRgs"/>
+                <xs:element ref="import:ResidentRgs"/>
+                <xs:element ref="import:SNILSRgs"/>
+                <xs:element ref="import:Score"/>
+                <xs:element ref="import:Subtype"/>
+                <xs:element ref="import:Tags"/>
+                <xs:element ref="import:TaxID"/>
+                <xs:element ref="import:TaxStatus"/>
+                <xs:element ref="import:TemporaryLastUpdateTime"/>
+                <xs:element ref="import:TrustContactRgs"/>
+                <xs:element ref="import:ValidationLevel"/>
+                <xs:element ref="import:VendorNumber"/>
+                <xs:element ref="import:VendorType"/>
+                <xs:element ref="import:WithholdingRate"/>
+                <xs:element ref="import:WorkPhone"/>
+                <xs:element ref="import:WorkPhoneCountry"/>
+                <xs:element ref="import:WorkPhoneExtension"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="OGRNRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="UWIssueType">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:AutoApprovable"/>
+                <xs:element ref="import:BlockingPoint"/>
+                <xs:element ref="import:CheckingSet"/>
+                <xs:element ref="import:Code"/>
+                <xs:element ref="import:Comparator"/>
+                <xs:element ref="import:DefaultApprovalBlockingPoint"/>
+                <xs:element ref="import:DefaultDurationType"/>
+                <xs:element ref="import:DefaultEditBeforeBind"/>
+                <xs:element ref="import:DefaultValueAssignmentType"/>
+                <xs:element ref="import:DefaultValueOffsetAmount"/>
+                <xs:element ref="import:DefaultValueOffsetCurrency"/>
+                <xs:element ref="import:Description"/>
+                <xs:element ref="import:Description_L10N_ARRAY"/>
+                <xs:element ref="import:Name"/>
+                <xs:element ref="import:Name_L10N_ARRAY"/>
+                <xs:element ref="import:ValueFormatterType"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:anyURI"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="AutoApprovable" type="xs:boolean"/>
+    <xs:element name="BlockingPoint" type="xs:NCName"/>
+    <xs:element name="CheckingSet" type="xs:NCName"/>
+    <xs:element name="Comparator" type="xs:NCName"/>
+    <xs:element name="DefaultApprovalBlockingPoint" type="xs:NCName"/>
+    <xs:element name="DefaultDurationType" type="xs:NCName"/>
+    <xs:element name="DefaultEditBeforeBind" type="xs:boolean"/>
+    <xs:element name="DefaultValueAssignmentType">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="DefaultValueOffsetAmount">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="DefaultValueOffsetCurrency" type="xs:NCName"/>
+    <xs:element name="ValueFormatterType" type="xs:NCName"/>
+    <xs:element name="UserContact">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:AbsentMiddleName"/>
+                <xs:element ref="import:AccountHolderCount"/>
+                <xs:element ref="import:AddressBookUID"/>
+                <xs:element ref="import:ArchiveDate"/>
+                <xs:element ref="import:ArchiveFailure"/>
+                <xs:element ref="import:ArchiveFailureDetails"/>
+                <xs:element ref="import:ArchivePartition"/>
+                <xs:element ref="import:ArchiveSchemaInfo"/>
+                <xs:element ref="import:ArchiveState"/>
+                <xs:element ref="import:AutoSync"/>
+                <xs:element ref="import:BatchIdRgs"/>
+                <xs:element ref="import:BlackListTypeRgs"/>
+                <xs:element ref="import:BusinessPerson"/>
+                <xs:element ref="import:CategoryScores"/>
+                <xs:element ref="import:CellPhone"/>
+                <xs:element ref="import:CellPhoneCountry"/>
+                <xs:element ref="import:CellPhoneExtension"/>
+                <xs:element ref="import:ContactAddresses"/>
+                <xs:element ref="import:CorrectionAllowed"/>
+                <xs:element ref="import:CountryRgs"/>
+                <xs:element ref="import:DateOfBirth"/>
+                <xs:element ref="import:DivisionCodeRgs"/>
+                <xs:element ref="import:DoNotDestroy"/>
+                <xs:element ref="import:DwhUploadedRgs"/>
+                <xs:element ref="import:EmailAddress1"/>
+                <xs:element ref="import:EmailAddress2"/>
+                <xs:element ref="import:EmployeeNumber"/>
+                <xs:element ref="import:ExcludeReason"/>
+                <xs:element ref="import:ExcludedFromArchive"/>
+                <xs:element ref="import:ExternalID"/>
+                <xs:element ref="import:ExternalVersion"/>
+                <xs:element ref="import:FaxPhone"/>
+                <xs:element ref="import:FaxPhoneCountry"/>
+                <xs:element ref="import:FaxPhoneExtension"/>
+                <xs:element ref="import:FirstName"/>
+                <xs:element ref="import:FirstNameKanji"/>
+                <xs:element ref="import:FirstNameLatin"/>
+                <xs:element ref="import:FormerName"/>
+                <xs:element ref="import:Gender"/>
+                <xs:element ref="import:HomePhone"/>
+                <xs:element ref="import:HomePhoneCountry"/>
+                <xs:element ref="import:HomePhoneExtension"/>
+                <xs:element ref="import:INNRgs"/>
+                <xs:element ref="import:IdDwh"/>
+                <xs:element ref="import:IdRgs"/>
+                <xs:element ref="import:InBlackListRgs"/>
+                <xs:element ref="import:LastName"/>
+                <xs:element ref="import:LastNameKanji"/>
+                <xs:element ref="import:LastNameLatin"/>
+                <xs:element ref="import:LastUpdateTime"/>
+                <xs:element ref="import:LicenseNumber"/>
+                <xs:element ref="import:LicenseState"/>
+                <xs:element ref="import:LnrDwhRgs"/>
+                <xs:element ref="import:LoadRelatedContacts"/>
+                <xs:element ref="import:MaritalStatus"/>
+                <xs:element ref="import:MiddleName"/>
+                <xs:element ref="import:Name"/>
+                <xs:element ref="import:NameKanji"/>
+                <xs:element ref="import:NameRgs"/>
+                <xs:element ref="import:Notes"/>
+                <xs:element ref="import:NumDependents"/>
+                <xs:element ref="import:NumDependentsU18"/>
+                <xs:element ref="import:NumDependentsU25"/>
+                <xs:element ref="import:OPFRgs"/>
+                <xs:element ref="import:ObfuscatedInternal"/>
+                <xs:element ref="import:Occupation"/>
+                <xs:element ref="import:Particle"/>
+                <xs:element ref="import:Preferred"/>
+                <xs:element ref="import:PreferredCurrency"/>
+                <xs:element ref="import:PreferredSettlementCurrency"/>
+                <xs:element ref="import:Prefix"/>
+                <xs:element ref="import:PrimaryAddress"/>
+                <xs:element ref="import:PrimaryContactPhoneRgs"/>
+                <xs:element ref="import:PrimaryLanguage"/>
+                <xs:element ref="import:PrimaryLocale"/>
+                <xs:element ref="import:PrimaryMailRgs"/>
+                <xs:element ref="import:PrimaryPhone"/>
+                <xs:element ref="import:RegionCodeRgs"/>
+                <xs:element ref="import:RegistrationAddressRgs"/>
+                <xs:element ref="import:RelevanceDateRgs"/>
+                <xs:element ref="import:ResidentRgs"/>
+                <xs:element ref="import:SNILSRgs"/>
+                <xs:element ref="import:Score"/>
+                <xs:element ref="import:Subtype"/>
+                <xs:element ref="import:Suffix"/>
+                <xs:element ref="import:Tags"/>
+                <xs:element ref="import:TaxFilingStatus"/>
+                <xs:element ref="import:TaxID"/>
+                <xs:element ref="import:TaxStatus"/>
+                <xs:element ref="import:TemporaryLastUpdateTime"/>
+                <xs:element ref="import:TrustContactRgs"/>
+                <xs:element ref="import:ValidationLevel"/>
+                <xs:element ref="import:VendorNumber"/>
+                <xs:element ref="import:VendorType"/>
+                <xs:element ref="import:WithholdingRate"/>
+                <xs:element ref="import:WorkPhone"/>
+                <xs:element ref="import:WorkPhoneCountry"/>
+                <xs:element ref="import:WorkPhoneExtension"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="AbsentMiddleName">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="BusinessPerson" type="xs:boolean"/>
+    <xs:element name="CellPhone" type="xs:string"/>
+    <xs:element name="CellPhoneCountry">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="CellPhoneExtension">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="DateOfBirth" type="xs:string"/>
+    <xs:element name="EmployeeNumber">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FirstName" type="xs:NCName"/>
+    <xs:element name="FirstNameKanji">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FirstNameLatin">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FormerName">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="Gender" type="xs:string"/>
+    <xs:element name="LastName" type="xs:NCName"/>
+    <xs:element name="LastNameKanji">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="LastNameLatin">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="LicenseNumber">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="LicenseState">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="MaritalStatus">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="MiddleName" type="xs:string"/>
+    <xs:element name="NumDependents">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="NumDependentsU18">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="NumDependentsU25">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="Occupation">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="Particle">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="Prefix">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="Suffix">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="TaxFilingStatus">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="User">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:sequence minOccurs="0">
+                    <xs:element ref="import:AccountLockoutReasonRgs"/>
+                    <xs:element ref="import:AgentCategoryTempRgs"/>
+                    <xs:element ref="import:AgentTempRgs"/>
+                    <xs:element ref="import:Attributes"/>
+                    <xs:element ref="import:BackupUsers"/>
+                    <xs:element ref="import:BankAdressRgs"/>
+                    <xs:element ref="import:BankCodeRgs"/>
+                    <xs:element ref="import:BankNameFullRgs"/>
+                    <xs:element ref="import:BankPartnerIdRgs"/>
+                    <xs:element ref="import:CardIdRgs"/>
+                    <xs:element ref="import:Category"/>
+                    <xs:element ref="import:Contact"/>
+                    <xs:element ref="import:Credential"/>
+                    <xs:element ref="import:DefaultCountry"/>
+                    <xs:element ref="import:DefaultPhoneCountry"/>
+                    <xs:element ref="import:Department"/>
+                    <xs:element ref="import:ExperienceLevel"/>
+                    <xs:element ref="import:ExternalUser"/>
+                    <xs:element ref="import:IsTechnicalRgs"/>
+                    <xs:element ref="import:JobTitle"/>
+                    <xs:element ref="import:LNRTempRgs"/>
+                    <xs:element ref="import:Language"/>
+                    <xs:element ref="import:Locale"/>
+                    <xs:element ref="import:ObfuscatedInternal"/>
+                    <xs:element ref="import:Organization"/>
+                    <xs:element ref="import:Regions"/>
+                    <xs:element ref="import:RelatedAgencies"/>
+                    <xs:element ref="import:Roles"/>
+                </xs:sequence>
+                <xs:sequence minOccurs="0">
+                    <xs:element ref="import:SessionTimeoutSecs"/>
+                    <xs:element ref="import:ShowOrgAddressRgs"/>
+                    <xs:element ref="import:SystemUserType"/>
+                    <xs:element ref="import:TimeZone"/>
+                    <xs:element ref="import:UseOrgAddress"/>
+                    <xs:element ref="import:UseProducerCodeSecurity"/>
+                    <xs:element ref="import:UserAuthorityProfiles"/>
+                </xs:sequence>
+                <xs:element minOccurs="0" ref="import:UserProducerCodes"/>
+                <xs:sequence minOccurs="0">
+                    <xs:element ref="import:UserSettings"/>
+                    <xs:element ref="import:UserType"/>
+                    <xs:element ref="import:VacationStatus"/>
+                    <xs:element ref="import:ValidationLevel"/>
+                </xs:sequence>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="AccountLockoutReasonRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="AgentCategoryTempRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="AgentTempRgs" type="xs:boolean"/>
+    <xs:element name="Attributes">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="BackupUsers">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="BankAdressRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="BankCodeRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="BankNameFullRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="BankPartnerIdRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="CardIdRgs" type="xs:string"/>
+    <xs:element name="DefaultCountry">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="DefaultPhoneCountry">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="Department">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="ExperienceLevel">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="ExternalUser" type="xs:boolean"/>
+    <xs:element name="IsTechnicalRgs" type="xs:boolean"/>
+    <xs:element name="JobTitle">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="LNRTempRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="Locale" type="xs:string"/>
+    <xs:element name="RelatedAgencies">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="Roles">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="import:UserRole"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="UserRole">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:Role"/>
+                <xs:element ref="import:User"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SessionTimeoutSecs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="ShowOrgAddressRgs" type="xs:boolean"/>
+    <xs:element name="SystemUserType" type="xs:string"/>
+    <xs:element name="TimeZone">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="UseOrgAddress" type="xs:boolean"/>
+    <xs:element name="UseProducerCodeSecurity" type="xs:boolean"/>
+    <xs:element name="UserAuthorityProfiles">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" ref="import:UserAuthorityProfile"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="UserAuthorityProfile">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:UWAuthorityProfile"/>
+                <xs:element ref="import:User"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="UserProducerCodes">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="import:UserProducerCode"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="UserProducerCode">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:ProducerCode"/>
+                <xs:element ref="import:Role"/>
+                <xs:element ref="import:User"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="UserType" type="xs:NCName"/>
+    <xs:element name="VacationStatus" type="xs:NCName"/>
+    <xs:element name="AccountHolderCount" type="xs:integer"/>
+    <xs:element name="AddressBookUID">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="ArchiveDate">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="ArchiveFailure">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="ArchiveFailureDetails">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="ArchivePartition">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="ArchiveSchemaInfo">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="ArchiveState">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="AutoSync">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="BatchIdRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="BlackListTypeRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="CategoryScores">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="ContactAddresses">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="import:ContactAddress"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ContactAddress">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:Address"/>
+                <xs:element ref="import:AddressBookUID"/>
+                <xs:element ref="import:AddressIdDwh"/>
+                <xs:element ref="import:ArchivePartition"/>
+                <xs:element ref="import:Contact"/>
+                <xs:element ref="import:ContactIdDwh"/>
+                <xs:element ref="import:ExternalID"/>
+                <xs:element ref="import:IdDwh"/>
+                <xs:element ref="import:ObfuscatedInternal"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="AddressIdDwh">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="CorrectionAllowed">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="CountryRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="DivisionCodeRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="DoNotDestroy" type="xs:boolean"/>
+    <xs:element name="DwhUploadedRgs" type="xs:boolean"/>
+    <xs:element name="EmailAddress1" type="xs:string"/>
+    <xs:element name="EmailAddress2" type="xs:string"/>
+    <xs:element name="ExcludeReason">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="ExcludedFromArchive">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="ExternalID" type="xs:anyURI"/>
+    <xs:element name="ExternalVersion" type="xs:integer"/>
+    <xs:element name="FaxPhone">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FaxPhoneCountry">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FaxPhoneExtension">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="HomePhone">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="HomePhoneCountry">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="HomePhoneExtension">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="INNRgs" type="xs:string"/>
+    <xs:element name="IdDwh">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="IdRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="InBlackListRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="LastUpdateTime" type="xs:string"/>
+    <xs:element name="LnrDwhRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="LoadRelatedContacts" type="xs:boolean"/>
+    <xs:element name="Name" type="xs:string"/>
+    <xs:element name="NameKanji">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="NameRgs" type="xs:string"/>
+    <xs:element name="Notes">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="OPFRgs" type="xs:string"/>
+    <xs:element name="ObfuscatedInternal" type="xs:boolean"/>
+    <xs:element name="Preferred" type="xs:boolean"/>
+    <xs:element name="PreferredCurrency">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="PreferredSettlementCurrency">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="PrimaryAddress">
+        <xs:complexType>
+            <xs:attribute name="public-id" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PrimaryContactPhoneRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="PrimaryLanguage" type="xs:string"/>
+    <xs:element name="PrimaryLocale" type="xs:string"/>
+    <xs:element name="PrimaryMailRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="PrimaryPhone" type="xs:string"/>
+    <xs:element name="RegionCodeRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="RegistrationAddressRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="RelevanceDateRgs" type="xs:string"/>
+    <xs:element name="ResidentRgs" type="xs:string"/>
+    <xs:element name="SNILSRgs" type="xs:string"/>
+    <xs:element name="Score">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="Subtype" type="xs:NCName"/>
+    <xs:element name="Tags">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:ContactTag"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ContactTag">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:AddressBookUID"/>
+                <xs:element ref="import:ArchivePartition"/>
+                <xs:element ref="import:Contact"/>
+                <xs:element ref="import:ObfuscatedInternal"/>
+                <xs:element ref="import:Type"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="TaxID">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="TaxStatus" type="xs:NCName"/>
+    <xs:element name="TemporaryLastUpdateTime">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="TrustContactRgs" type="xs:boolean"/>
+    <xs:element name="ValidationLevel" type="xs:string"/>
+    <xs:element name="VendorNumber">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="VendorType">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="WithholdingRate">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="WorkPhone">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="WorkPhoneCountry">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="WorkPhoneExtension">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="Credential">
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="import:Active"/>
+                <xs:element ref="import:FailedAttempts"/>
+                <xs:element ref="import:FailedTime"/>
+                <xs:element ref="import:LockDate"/>
+                <xs:element ref="import:ObfuscatedInternal"/>
+                <xs:element ref="import:Password"/>
+                <xs:element ref="import:UserName"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="FailedAttempts" type="xs:integer"/>
+    <xs:element name="FailedTime">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="LockDate">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="Password" type="xs:string"/>
+    <xs:element name="UserName" type="xs:NMTOKEN"/>
+    <xs:element name="Organization">
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="import:AgencyBillPlans"/>
+                <xs:element ref="import:BranchID_Rgs"/>
+                <xs:element ref="import:Carrier"/>
+                <xs:element ref="import:Contact"/>
+                <xs:element ref="import:INN_Rgs"/>
+                <xs:element ref="import:KPP_Rgs"/>
+                <xs:element ref="import:MasterAdmin"/>
+                <xs:element ref="import:Name"/>
+                <xs:element ref="import:NameKanji"/>
+                <xs:element ref="import:PartnerID_Rgs"/>
+                <xs:element ref="import:ProducerStatus"/>
+                <xs:element ref="import:RootGroup"/>
+                <xs:element ref="import:SalesChannel_Rgs"/>
+                <xs:element ref="import:Tier"/>
+                <xs:element ref="import:Type"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="AgencyBillPlans">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="BranchID_Rgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="Carrier" type="xs:boolean"/>
+    <xs:element name="INN_Rgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="KPP_Rgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="MasterAdmin" type="xs:boolean"/>
+    <xs:element name="PartnerID_Rgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="RootGroup">
+        <xs:complexType>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SalesChannel_Rgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="Tier">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="Address">
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="import:ActiveAddressBoxRgs"/>
+                <xs:element ref="import:AddressBookUID"/>
+                <xs:element ref="import:AddressLine1"/>
+                <xs:element ref="import:AddressLine1Kanji"/>
+                <xs:element ref="import:AddressLine2"/>
+                <xs:element ref="import:AddressLine2Kanji"/>
+                <xs:element ref="import:AddressLine3"/>
+                <xs:element ref="import:AddressType"/>
+                <xs:element ref="import:ApartmentRgs"/>
+                <xs:element ref="import:ArchivePartition"/>
+                <xs:element ref="import:AreaRgs"/>
+                <xs:element ref="import:AreaTypeRgs"/>
+                <xs:element ref="import:BatchGeocode"/>
+                <xs:element ref="import:BuildingRgs"/>
+                <xs:element ref="import:CEDEX"/>
+                <xs:element ref="import:CEDEXBureau"/>
+                <xs:element ref="import:CheckApartmentRgs"/>
+                <xs:element ref="import:CheckBuildingRgs"/>
+                <xs:element ref="import:CheckCommunityRgs"/>
+                <xs:element ref="import:CheckStreetRgs"/>
+                <xs:element ref="import:City"/>
+                <xs:element ref="import:CityKanji"/>
+                <xs:element ref="import:CityTypeRgs"/>
+                <xs:element ref="import:CodeCLADRRgs"/>
+                <xs:element ref="import:CommunityRgs"/>
+                <xs:element ref="import:ConstructionRgs"/>
+                <xs:element ref="import:ContactIdDwh"/>
+                <xs:element ref="import:Country"/>
+                <xs:element ref="import:CountryRgs"/>
+                <xs:element ref="import:County"/>
+                <xs:element ref="import:Description"/>
+                <xs:element ref="import:ExternalID"/>
+                <xs:element ref="import:FIASApartmentRgs"/>
+                <xs:element ref="import:FIASAreaIdRgs"/>
+                <xs:element ref="import:FIASAreaRgs"/>
+                <xs:element ref="import:FIASBuildingRgs"/>
+                <xs:element ref="import:FIASCityIdRgs"/>
+                <xs:element ref="import:FIASCityRgs"/>
+                <xs:element ref="import:FIASCommunityIdRgs"/>
+                <xs:element ref="import:FIASCommunityRgs"/>
+                <xs:element ref="import:FIASConstructionRgs"/>
+                <xs:element ref="import:FIASCountryRgs"/>
+                <xs:element ref="import:FIASHousingRgs"/>
+                <xs:element ref="import:FIASLocalityIdRgs"/>
+                <xs:element ref="import:FIASLocalityRgs"/>
+                <xs:element ref="import:FIASPostalCodeRgs"/>
+                <xs:element ref="import:FIASRegionIdRgs"/>
+                <xs:element ref="import:FIASRegionRgs"/>
+                <xs:element ref="import:FIASRoomRgs"/>
+                <xs:element ref="import:FIASStreetIdRgs"/>
+                <xs:element ref="import:FIASStreetRgs"/>
+                <xs:element ref="import:FIASStreetTypeRgs"/>
+                <xs:element ref="import:GeocodeStatus"/>
+                <xs:element ref="import:HousingRgs"/>
+                <xs:element ref="import:IdDwh"/>
+                <xs:element ref="import:LastUpdateTime"/>
+                <xs:element ref="import:LinkedAddress"/>
+                <xs:element ref="import:LocalityRgs"/>
+                <xs:element ref="import:LocalityTypeRgs"/>
+                <xs:element ref="import:ObfuscatedInternal"/>
+                <xs:element ref="import:PostalCode"/>
+                <xs:element ref="import:PostalFromDictRgs"/>
+                <xs:element ref="import:Referenced"/>
+                <xs:element ref="import:RegionRgs"/>
+                <xs:element ref="import:RegionTypeRgs"/>
+                <xs:element ref="import:RelevanceDateRgs"/>
+                <xs:element ref="import:RoomRgs"/>
+                <xs:element ref="import:SpatialPoint"/>
+                <xs:element ref="import:State"/>
+                <xs:element ref="import:StreetRgs"/>
+                <xs:element ref="import:StreetTypeRgs"/>
+                <xs:element ref="import:Subtype"/>
+                <xs:element ref="import:TemporaryLastUpdateTime"/>
+                <xs:element ref="import:ValidUntil"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ActiveAddressBoxRgs" type="xs:boolean"/>
+    <xs:element name="AddressLine1" type="xs:string"/>
+    <xs:element name="AddressLine1Kanji">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="AddressLine2">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="AddressLine2Kanji">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="AddressLine3">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="AddressType" type="xs:string"/>
+    <xs:element name="ApartmentRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="AreaRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="AreaTypeRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="BatchGeocode" type="xs:boolean"/>
+    <xs:element name="BuildingRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="CEDEX">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="CEDEXBureau">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="CheckApartmentRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="CheckBuildingRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="CheckCommunityRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="CheckStreetRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="City" type="xs:string"/>
+    <xs:element name="CityKanji">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="CityTypeRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="CodeCLADRRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="CommunityRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="ConstructionRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="Country" type="xs:string"/>
+    <xs:element name="County">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FIASApartmentRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FIASAreaIdRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FIASAreaRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FIASBuildingRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FIASCityIdRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FIASCityRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FIASCommunityIdRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FIASCommunityRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FIASConstructionRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FIASCountryRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FIASHousingRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FIASLocalityIdRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FIASLocalityRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FIASPostalCodeRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FIASRegionIdRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FIASRegionRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FIASRoomRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FIASStreetIdRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FIASStreetRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="FIASStreetTypeRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="GeocodeStatus" type="xs:NCName"/>
+    <xs:element name="HousingRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="LinkedAddress">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="LocalityRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="LocalityTypeRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="PostalCode">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="PostalFromDictRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="Referenced" type="xs:boolean"/>
+    <xs:element name="RegionRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="RegionTypeRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="RoomRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="SpatialPoint">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="State">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="StreetRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="StreetTypeRgs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="ValidUntil">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="Role">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:sequence minOccurs="0">
+                    <xs:element ref="import:CarrierInternalRole"/>
+                    <xs:element ref="import:Description"/>
+                    <xs:element ref="import:Description_L10N_ARRAY"/>
+                    <xs:element ref="import:Name"/>
+                    <xs:element ref="import:Name_L10N_ARRAY"/>
+                    <xs:element ref="import:Privileges"/>
+                </xs:sequence>
+                <xs:element minOccurs="0" ref="import:RoleType"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="CarrierInternalRole" type="xs:boolean"/>
+    <xs:element name="Privileges">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="import:RolePrivilege"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="RolePrivilege">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:Permission"/>
+                <xs:element ref="import:Role"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Permission" type="xs:NCName"/>
+    <xs:element name="RoleType" type="xs:NCName"/>
+    <xs:element name="SecurityZone">
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="import:Description"/>
+                <xs:element ref="import:Description_L10N_ARRAY"/>
+                <xs:element ref="import:Name"/>
+                <xs:element ref="import:Name_L10N_ARRAY"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Group">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:sequence minOccurs="0">
+                    <xs:element ref="import:Active"/>
+                    <xs:element ref="import:AddressRgs"/>
+                    <xs:element ref="import:BranchCode"/>
+                    <xs:element ref="import:CityRgs"/>
+                    <xs:element ref="import:CodeBOSSRgs"/>
+                    <xs:element ref="import:CodeSKKRgs"/>
+                    <xs:element ref="import:Description"/>
+                    <xs:element ref="import:Description_L10N_ARRAY"/>
+                    <xs:element ref="import:EndDateRgs"/>
+                    <xs:element ref="import:GroupProducerCodes"/>
+                </xs:sequence>
+                <xs:sequence minOccurs="0">
+                    <xs:element ref="import:GroupType"/>
+                    <xs:element ref="import:INNRgs"/>
+                    <xs:element ref="import:KPPRgs"/>
+                    <xs:element ref="import:LoadFactor"/>
+                    <xs:element ref="import:MAGLnrRgs"/>
+                    <xs:element ref="import:Name"/>
+                    <xs:element ref="import:NameBOSSRgs"/>
+                    <xs:element ref="import:NameBOSSRgs_L10N_ARRAY"/>
+                    <xs:element ref="import:NameKanji"/>
+                    <xs:element ref="import:Name_L10N_ARRAY"/>
+                    <xs:element ref="import:OKTMORgs"/>
+                    <xs:element ref="import:Organization"/>
+                    <xs:element ref="import:Parent"/>
+                    <xs:element ref="import:Regions"/>
+                </xs:sequence>
+                <xs:sequence minOccurs="0">
+                    <xs:element ref="import:SecurityZone"/>
+                    <xs:element ref="import:StartDateRgs"/>
+                    <xs:element ref="import:Supervisor"/>
+                    <xs:element ref="import:TimeShiftRgs"/>
+                    <xs:element ref="import:Users"/>
+                </xs:sequence>
+                <xs:sequence minOccurs="0">
+                    <xs:element ref="import:ValidationLevel"/>
+                    <xs:element ref="import:VirtualGroupRgs"/>
+                    <xs:element ref="import:VisibilityZone"/>
+                    <xs:element ref="import:WorldVisible"/>
+                </xs:sequence>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="AddressRgs" type="xs:string"/>
+    <xs:element name="BranchCode">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="CityRgs" type="xs:string"/>
+    <xs:element name="CodeBOSSRgs" type="xs:string"/>
+    <xs:element name="CodeSKKRgs" type="xs:string"/>
+    <xs:element name="EndDateRgs" type="xs:string"/>
+    <xs:element name="GroupProducerCodes">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" ref="import:GroupProducerCode"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GroupProducerCode">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:Group"/>
+                <xs:element ref="import:ProducerCode"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GroupType" type="xs:NCName"/>
+    <xs:element name="KPPRgs" type="xs:string"/>
+    <xs:element name="MAGLnrRgs" type="xs:string"/>
+    <xs:element name="NameBOSSRgs" type="xs:string"/>
+    <xs:element name="NameBOSSRgs_L10N_ARRAY">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="import:Group_NameBOSSRgs_L10N"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Group_NameBOSSRgs_L10N">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:Language"/>
+                <xs:element ref="import:Owner"/>
+                <xs:element ref="import:Value"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="OKTMORgs" type="xs:string"/>
+    <xs:element name="StartDateRgs" type="xs:string"/>
+    <xs:element name="Supervisor">
+        <xs:complexType>
+            <xs:attribute name="public-id" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="TimeShiftRgs" type="xs:string"/>
+    <xs:element name="Users">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="import:GroupUser"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GroupUser">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:Group"/>
+                <xs:element ref="import:LoadFactor"/>
+                <xs:element ref="import:LoadFactorType"/>
+                <xs:element ref="import:Manager"/>
+                <xs:element ref="import:Member"/>
+                <xs:element ref="import:TextField1"/>
+                <xs:element ref="import:TextField2"/>
+                <xs:element ref="import:TextField3"/>
+                <xs:element ref="import:User"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="LoadFactorType">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="Manager" type="xs:boolean"/>
+    <xs:element name="Member" type="xs:boolean"/>
+    <xs:element name="TextField1">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="TextField2">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="TextField3">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="VirtualGroupRgs" type="xs:boolean"/>
+    <xs:element name="VisibilityZone">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="WorldVisible" type="xs:boolean"/>
+    <xs:element name="ProducerCode">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:sequence minOccurs="0">
+                    <xs:element ref="import:Address"/>
+                    <xs:element ref="import:AddressPublicID"/>
+                    <xs:element ref="import:AffinityGroupProducerCodes"/>
+                    <xs:element ref="import:AppointmentDate"/>
+                    <xs:element ref="import:Branch"/>
+                    <xs:element ref="import:CardIDRgs"/>
+                    <xs:element ref="import:Code"/>
+                    <xs:element ref="import:CommissionPlans"/>
+                    <xs:element ref="import:Description"/>
+                    <xs:element ref="import:Description_L10N_ARRAY"/>
+                    <xs:element ref="import:EMailAddresRgs"/>
+                    <xs:element ref="import:INNRgs"/>
+                    <xs:element ref="import:LNRRgs"/>
+                    <xs:element ref="import:MiddleNameRgs"/>
+                    <xs:element ref="import:NameOfSubdivisionRgs"/>
+                    <xs:element ref="import:NameRgs"/>
+                    <xs:element ref="import:Organization"/>
+                    <xs:element ref="import:Parent"/>
+                    <xs:element ref="import:PhoneNumberRgs"/>
+                    <xs:element ref="import:PreferredUnderwriter"/>
+                    <xs:element ref="import:ProducerCodeRoles"/>
+                </xs:sequence>
+                <xs:sequence minOccurs="0">
+                    <xs:element ref="import:ProducerStatus"/>
+                    <xs:element ref="import:SKKCodeRgs"/>
+                    <xs:element ref="import:SNILSRgs"/>
+                    <xs:element ref="import:SalesChannelRgs"/>
+                    <xs:element ref="import:SalesGroupRgs"/>
+                    <xs:element ref="import:SalesPointRgs"/>
+                    <xs:element ref="import:SurnameRgs"/>
+                    <xs:element ref="import:TerminationDate"/>
+                </xs:sequence>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="AddressPublicID">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="AffinityGroupProducerCodes">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="AppointmentDate">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="Branch">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="CardIDRgs" type="xs:string"/>
+    <xs:element name="CommissionPlans">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="EMailAddresRgs" type="xs:string"/>
+    <xs:element name="LNRRgs" type="xs:string"/>
+    <xs:element name="MiddleNameRgs" type="xs:string"/>
+    <xs:element name="NameOfSubdivisionRgs" type="xs:string"/>
+    <xs:element name="PhoneNumberRgs" type="xs:string"/>
+    <xs:element name="PreferredUnderwriter">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="ProducerCodeRoles">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="import:ProducerCodeRole"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ProducerCodeRole">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:ProducerCode"/>
+                <xs:element ref="import:Role"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SKKCodeRgs" type="xs:string"/>
+    <xs:element name="SalesChannelRgs" type="xs:string"/>
+    <xs:element name="SalesGroupRgs" type="xs:string"/>
+    <xs:element name="SalesPointRgs" type="xs:string"/>
+    <xs:element name="SurnameRgs" type="xs:string"/>
+    <xs:element name="TerminationDate">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="Description" type="xs:string"/>
+    <xs:element name="UserSettings">
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="import:CancelAlertDismiss"/>
+                <xs:element ref="import:EmailOnActAssign"/>
+                <xs:element ref="import:LastAccounts"/>
+                <xs:element ref="import:LastContacts"/>
+                <xs:element ref="import:LastPolicies"/>
+                <xs:element ref="import:MaxRecentAccounts"/>
+                <xs:element ref="import:MaxRecentContacts"/>
+                <xs:element ref="import:MaxRecentPoliciesAndJobs"/>
+                <xs:element ref="import:PrintMargins"/>
+                <xs:element ref="import:PrintPageNums"/>
+                <xs:element ref="import:RotateTables"/>
+                <xs:element ref="import:ShowPrintPreview"/>
+                <xs:element ref="import:StartupPage"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="CancelAlertDismiss">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="EmailOnActAssign">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="LastAccounts">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="LastContacts">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="LastPolicies">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="MaxRecentAccounts">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="MaxRecentContacts">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="MaxRecentPoliciesAndJobs">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="PrintMargins">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="PrintPageNums">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="RotateTables">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="ShowPrintPreview">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="StartupPage" type="xs:string"/>
+    <xs:element name="Category" type="xs:string"/>
+    <xs:element name="Code" type="xs:string"/>
+    <xs:element name="Description_L10N_ARRAY">
+        <xs:complexType>
+            <xs:choice>
+                <xs:element ref="import:SecurityZone_Description_L10N"/>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="import:ProducerCode_Description_L10N"/>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="import:Role_Description_L10N"/>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="import:ActivityPattern_Description_L10N"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SecurityZone_Description_L10N">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:Language"/>
+                <xs:element ref="import:Owner"/>
+                <xs:element ref="import:Value"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ProducerCode_Description_L10N">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:Language"/>
+                <xs:element ref="import:Owner"/>
+                <xs:element ref="import:Value"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Role_Description_L10N">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:Language"/>
+                <xs:element ref="import:Owner"/>
+                <xs:element ref="import:Value"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ActivityPattern_Description_L10N">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:Language"/>
+                <xs:element ref="import:Owner"/>
+                <xs:element ref="import:Value"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Language" type="xs:string"/>
+    <xs:element name="Owner">
+        <xs:complexType>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Value" type="xs:string"/>
+    <xs:element name="Type" type="xs:NCName"/>
+    <xs:element name="Region">
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="import:Code"/>
+                <xs:element ref="import:Name"/>
+                <xs:element ref="import:Name_L10N_ARRAY"/>
+                <xs:element ref="import:RegionZones"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="RegionZones">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="UWAuthorityProfile">
+        <xs:complexType>
+            <xs:choice minOccurs="0">
+                <xs:sequence>
+                    <xs:element ref="import:Description"/>
+                    <xs:element ref="import:Description_L10N_ARRAY"/>
+                    <xs:element ref="import:Grants"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element ref="import:Name"/>
+                    <xs:element ref="import:Name_L10N_ARRAY"/>
+                </xs:sequence>
+            </xs:choice>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Grants">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="import:UWAuthorityGrant"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="UWAuthorityGrant">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:ApproveAnyValue"/>
+                <xs:element ref="import:IssueType"/>
+                <xs:element ref="import:UWAuthorityProfile"/>
+                <xs:element ref="import:Value"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ApproveAnyValue" type="xs:boolean"/>
+    <xs:element name="IssueType">
+        <xs:complexType>
+            <xs:attribute name="public-id" use="required" type="xs:anyURI"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Name_L10N_ARRAY">
+        <xs:complexType>
+            <xs:choice>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="import:Role_Name_L10N"/>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="import:Group_Name_L10N"/>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="import:SecurityZone_Name_L10N"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Role_Name_L10N">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:Language"/>
+                <xs:element ref="import:Owner"/>
+                <xs:element ref="import:Value"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Group_Name_L10N">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:Language"/>
+                <xs:element ref="import:Owner"/>
+                <xs:element ref="import:Value"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SecurityZone_Name_L10N">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:Language"/>
+                <xs:element ref="import:Owner"/>
+                <xs:element ref="import:Value"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Contact">
+        <xs:complexType>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Regions">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" ref="import:GroupRegion"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GroupRegion">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import:Group"/>
+                <xs:element ref="import:Region"/>
+            </xs:sequence>
+            <xs:attribute name="public-id" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ContactIdDwh">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="Active" type="xs:string"/>
+    <xs:element name="ProducerStatus" type="xs:NCName"/>
+    <xs:element name="LoadFactor" type="xs:string"/>
+    <xs:element name="Parent">
+        <xs:complexType>
+            <xs:attribute name="public-id" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

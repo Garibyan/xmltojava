@@ -1,0 +1,1775 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar ns="http://guidewire.com/pc/exim/import" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+        <element name="import">
+            <attribute name="usePeriodicFlushes">
+                <data type="boolean"/>
+            </attribute>
+            <attribute name="version">
+                <data type="NCName"/>
+            </attribute>
+            <oneOrMore>
+                <choice>
+                    <ref name="Address"/>
+                    <ref name="Credential"/>
+                    <ref name="Group"/>
+                    <ref name="Organization"/>
+                    <ref name="ProducerCode"/>
+                    <ref name="Region"/>
+                    <ref name="Role"/>
+                    <ref name="SecurityZone"/>
+                    <ref name="UWAuthorityProfile"/>
+                    <ref name="User"/>
+                    <ref name="UserSettings"/>
+                    <element name="ActivityPattern">
+                        <attribute name="public-id">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                        <element name="ActivityClass">
+                            <data type="NCName"/>
+                        </element>
+                        <element name="AssignedQueue">
+                            <optional>
+                                <attribute name="public-id">
+                                    <data type="NMTOKEN"/>
+                                </attribute>
+                            </optional>
+                        </element>
+                        <element name="AutomatedOnly">
+                            <data type="boolean"/>
+                        </element>
+                        <ref name="Category"/>
+                        <ref name="Code"/>
+                        <element name="Command">
+                            <empty/>
+                        </element>
+                        <ref name="Description"/>
+                        <ref name="Description_L10N_ARRAY"/>
+                        <element name="DocumentTemplate">
+                            <empty/>
+                        </element>
+                        <element name="EmailTemplate">
+                            <empty/>
+                        </element>
+                        <element name="EscBusCalLocPath">
+                            <empty/>
+                        </element>
+                        <element name="EscalationBusCalTag">
+                            <empty/>
+                        </element>
+                        <element name="EscalationDays">
+                            <text/>
+                        </element>
+                        <element name="EscalationHours">
+                            <text/>
+                        </element>
+                        <element name="EscalationInclDays">
+                            <text/>
+                        </element>
+                        <element name="EscalationStartPt">
+                            <text/>
+                        </element>
+                        <element name="Mandatory">
+                            <data type="boolean"/>
+                        </element>
+                        <element name="PatternLevel">
+                            <data type="NCName"/>
+                        </element>
+                        <element name="Priority">
+                            <data type="NCName"/>
+                        </element>
+                        <element name="Recurring">
+                            <data type="boolean"/>
+                        </element>
+                        <element name="ReturnDaysRgs">
+                            <empty/>
+                        </element>
+                        <element name="ReturnHoursRgs">
+                            <empty/>
+                        </element>
+                        <element name="ReturnInclDaysRgs">
+                            <empty/>
+                        </element>
+                        <element name="ReturnToQueueRgs">
+                            <text/>
+                        </element>
+                        <element name="ShortSubject">
+                            <text/>
+                        </element>
+                        <element name="ShortSubject_L10N_ARRAY">
+                            <empty/>
+                        </element>
+                        <element name="Subject">
+                            <text/>
+                        </element>
+                        <element name="Subject_L10N_ARRAY">
+                            <zeroOrMore>
+                                <element name="ActivityPattern_Subject_L10N">
+                                    <attribute name="public-id">
+                                        <data type="NMTOKEN"/>
+                                    </attribute>
+                                    <ref name="Language"/>
+                                    <ref name="Owner"/>
+                                    <ref name="Value"/>
+                                </element>
+                            </zeroOrMore>
+                        </element>
+                        <element name="TargetBusCalLocPath">
+                            <empty/>
+                        </element>
+                        <element name="TargetBusCalTag">
+                            <empty/>
+                        </element>
+                        <element name="TargetDays">
+                            <text/>
+                        </element>
+                        <element name="TargetHours">
+                            <empty/>
+                        </element>
+                        <element name="TargetIncludeDays">
+                            <text/>
+                        </element>
+                        <element name="TargetStartPoint">
+                            <text/>
+                        </element>
+                        <ref name="Type"/>
+                    </element>
+                    <element name="AssignableQueue">
+                        <attribute name="public-id">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                        <ref name="Description"/>
+                        <ref name="Group"/>
+                        <element name="LockingColumn">
+                            <data type="integer"/>
+                        </element>
+                        <ref name="Name"/>
+                        <element name="SubGroupVisible">
+                            <data type="boolean"/>
+                        </element>
+                    </element>
+                    <element name="Company">
+                        <attribute name="public-id">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                        <ref name="AccountHolderCount"/>
+                        <ref name="AddressBookUID"/>
+                        <ref name="ArchiveDate"/>
+                        <ref name="ArchiveFailure"/>
+                        <ref name="ArchiveFailureDetails"/>
+                        <ref name="ArchivePartition"/>
+                        <ref name="ArchiveSchemaInfo"/>
+                        <ref name="ArchiveState"/>
+                        <ref name="AutoSync"/>
+                        <ref name="BatchIdRgs"/>
+                        <ref name="BlackListTypeRgs"/>
+                        <ref name="CategoryScores"/>
+                        <ref name="ContactAddresses"/>
+                        <ref name="CorrectionAllowed"/>
+                        <ref name="CountryRgs"/>
+                        <ref name="DivisionCodeRgs"/>
+                        <ref name="DoNotDestroy"/>
+                        <ref name="DwhUploadedRgs"/>
+                        <ref name="EmailAddress1"/>
+                        <ref name="EmailAddress2"/>
+                        <ref name="ExcludeReason"/>
+                        <ref name="ExcludedFromArchive"/>
+                        <ref name="ExternalID"/>
+                        <ref name="ExternalVersion"/>
+                        <ref name="FaxPhone"/>
+                        <ref name="FaxPhoneCountry"/>
+                        <ref name="FaxPhoneExtension"/>
+                        <ref name="HomePhone"/>
+                        <ref name="HomePhoneCountry"/>
+                        <ref name="HomePhoneExtension"/>
+                        <ref name="INNRgs"/>
+                        <ref name="IdDwh"/>
+                        <ref name="IdRgs"/>
+                        <ref name="InBlackListRgs"/>
+                        <ref name="LastUpdateTime"/>
+                        <ref name="LnrDwhRgs"/>
+                        <ref name="LoadRelatedContacts"/>
+                        <ref name="Name"/>
+                        <ref name="NameKanji"/>
+                        <ref name="Notes"/>
+                        <element name="OGRNRgs">
+                            <empty/>
+                        </element>
+                        <ref name="OPFRgs"/>
+                        <ref name="ObfuscatedInternal"/>
+                        <ref name="Preferred"/>
+                        <ref name="PreferredCurrency"/>
+                        <ref name="PreferredSettlementCurrency"/>
+                        <ref name="PrimaryAddress"/>
+                        <ref name="PrimaryContactPhoneRgs"/>
+                        <ref name="PrimaryLanguage"/>
+                        <ref name="PrimaryLocale"/>
+                        <ref name="PrimaryMailRgs"/>
+                        <ref name="PrimaryPhone"/>
+                        <ref name="RegionCodeRgs"/>
+                        <ref name="RegistrationAddressRgs"/>
+                        <ref name="RelevanceDateRgs"/>
+                        <ref name="ResidentRgs"/>
+                        <ref name="SNILSRgs"/>
+                        <ref name="Score"/>
+                        <ref name="Subtype"/>
+                        <ref name="Tags"/>
+                        <ref name="TaxID"/>
+                        <ref name="TaxStatus"/>
+                        <ref name="TemporaryLastUpdateTime"/>
+                        <ref name="TrustContactRgs"/>
+                        <ref name="ValidationLevel"/>
+                        <ref name="VendorNumber"/>
+                        <ref name="VendorType"/>
+                        <ref name="WithholdingRate"/>
+                        <ref name="WorkPhone"/>
+                        <ref name="WorkPhoneCountry"/>
+                        <ref name="WorkPhoneExtension"/>
+                    </element>
+                    <element name="UWIssueType">
+                        <attribute name="public-id">
+                            <data type="anyURI"/>
+                        </attribute>
+                        <element name="AutoApprovable">
+                            <data type="boolean"/>
+                        </element>
+                        <element name="BlockingPoint">
+                            <data type="NCName"/>
+                        </element>
+                        <element name="CheckingSet">
+                            <data type="NCName"/>
+                        </element>
+                        <ref name="Code"/>
+                        <element name="Comparator">
+                            <data type="NCName"/>
+                        </element>
+                        <element name="DefaultApprovalBlockingPoint">
+                            <data type="NCName"/>
+                        </element>
+                        <element name="DefaultDurationType">
+                            <data type="NCName"/>
+                        </element>
+                        <element name="DefaultEditBeforeBind">
+                            <data type="boolean"/>
+                        </element>
+                        <element name="DefaultValueAssignmentType">
+                            <empty/>
+                        </element>
+                        <element name="DefaultValueOffsetAmount">
+                            <empty/>
+                        </element>
+                        <element name="DefaultValueOffsetCurrency">
+                            <data type="NCName"/>
+                        </element>
+                        <ref name="Description"/>
+                        <ref name="Description_L10N_ARRAY"/>
+                        <ref name="Name"/>
+                        <ref name="Name_L10N_ARRAY"/>
+                        <element name="ValueFormatterType">
+                            <data type="NCName"/>
+                        </element>
+                    </element>
+                    <element name="UserContact">
+                        <attribute name="public-id">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                        <element name="AbsentMiddleName">
+                            <empty/>
+                        </element>
+                        <ref name="AccountHolderCount"/>
+                        <ref name="AddressBookUID"/>
+                        <ref name="ArchiveDate"/>
+                        <ref name="ArchiveFailure"/>
+                        <ref name="ArchiveFailureDetails"/>
+                        <ref name="ArchivePartition"/>
+                        <ref name="ArchiveSchemaInfo"/>
+                        <ref name="ArchiveState"/>
+                        <ref name="AutoSync"/>
+                        <ref name="BatchIdRgs"/>
+                        <ref name="BlackListTypeRgs"/>
+                        <element name="BusinessPerson">
+                            <data type="boolean"/>
+                        </element>
+                        <ref name="CategoryScores"/>
+                        <element name="CellPhone">
+                            <text/>
+                        </element>
+                        <element name="CellPhoneCountry">
+                            <empty/>
+                        </element>
+                        <element name="CellPhoneExtension">
+                            <empty/>
+                        </element>
+                        <ref name="ContactAddresses"/>
+                        <ref name="CorrectionAllowed"/>
+                        <ref name="CountryRgs"/>
+                        <element name="DateOfBirth">
+                            <text/>
+                        </element>
+                        <ref name="DivisionCodeRgs"/>
+                        <ref name="DoNotDestroy"/>
+                        <ref name="DwhUploadedRgs"/>
+                        <ref name="EmailAddress1"/>
+                        <ref name="EmailAddress2"/>
+                        <element name="EmployeeNumber">
+                            <empty/>
+                        </element>
+                        <ref name="ExcludeReason"/>
+                        <ref name="ExcludedFromArchive"/>
+                        <ref name="ExternalID"/>
+                        <ref name="ExternalVersion"/>
+                        <ref name="FaxPhone"/>
+                        <ref name="FaxPhoneCountry"/>
+                        <ref name="FaxPhoneExtension"/>
+                        <element name="FirstName">
+                            <data type="NCName"/>
+                        </element>
+                        <element name="FirstNameKanji">
+                            <empty/>
+                        </element>
+                        <element name="FirstNameLatin">
+                            <empty/>
+                        </element>
+                        <element name="FormerName">
+                            <empty/>
+                        </element>
+                        <element name="Gender">
+                            <text/>
+                        </element>
+                        <ref name="HomePhone"/>
+                        <ref name="HomePhoneCountry"/>
+                        <ref name="HomePhoneExtension"/>
+                        <ref name="INNRgs"/>
+                        <ref name="IdDwh"/>
+                        <ref name="IdRgs"/>
+                        <ref name="InBlackListRgs"/>
+                        <element name="LastName">
+                            <data type="NCName"/>
+                        </element>
+                        <element name="LastNameKanji">
+                            <empty/>
+                        </element>
+                        <element name="LastNameLatin">
+                            <empty/>
+                        </element>
+                        <ref name="LastUpdateTime"/>
+                        <element name="LicenseNumber">
+                            <empty/>
+                        </element>
+                        <element name="LicenseState">
+                            <empty/>
+                        </element>
+                        <ref name="LnrDwhRgs"/>
+                        <ref name="LoadRelatedContacts"/>
+                        <element name="MaritalStatus">
+                            <empty/>
+                        </element>
+                        <element name="MiddleName">
+                            <text/>
+                        </element>
+                        <ref name="Name"/>
+                        <ref name="NameKanji"/>
+                        <ref name="NameRgs"/>
+                        <ref name="Notes"/>
+                        <element name="NumDependents">
+                            <empty/>
+                        </element>
+                        <element name="NumDependentsU18">
+                            <empty/>
+                        </element>
+                        <element name="NumDependentsU25">
+                            <empty/>
+                        </element>
+                        <ref name="OPFRgs"/>
+                        <ref name="ObfuscatedInternal"/>
+                        <element name="Occupation">
+                            <empty/>
+                        </element>
+                        <element name="Particle">
+                            <empty/>
+                        </element>
+                        <ref name="Preferred"/>
+                        <ref name="PreferredCurrency"/>
+                        <ref name="PreferredSettlementCurrency"/>
+                        <element name="Prefix">
+                            <empty/>
+                        </element>
+                        <ref name="PrimaryAddress"/>
+                        <ref name="PrimaryContactPhoneRgs"/>
+                        <ref name="PrimaryLanguage"/>
+                        <ref name="PrimaryLocale"/>
+                        <ref name="PrimaryMailRgs"/>
+                        <ref name="PrimaryPhone"/>
+                        <ref name="RegionCodeRgs"/>
+                        <ref name="RegistrationAddressRgs"/>
+                        <ref name="RelevanceDateRgs"/>
+                        <ref name="ResidentRgs"/>
+                        <ref name="SNILSRgs"/>
+                        <ref name="Score"/>
+                        <ref name="Subtype"/>
+                        <element name="Suffix">
+                            <empty/>
+                        </element>
+                        <ref name="Tags"/>
+                        <element name="TaxFilingStatus">
+                            <empty/>
+                        </element>
+                        <ref name="TaxID"/>
+                        <ref name="TaxStatus"/>
+                        <ref name="TemporaryLastUpdateTime"/>
+                        <ref name="TrustContactRgs"/>
+                        <ref name="ValidationLevel"/>
+                        <ref name="VendorNumber"/>
+                        <ref name="VendorType"/>
+                        <ref name="WithholdingRate"/>
+                        <ref name="WorkPhone"/>
+                        <ref name="WorkPhoneCountry"/>
+                        <ref name="WorkPhoneExtension"/>
+                    </element>
+                </choice>
+            </oneOrMore>
+        </element>
+    </start>
+    <define name="User">
+        <element name="User">
+            <attribute name="public-id">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <optional>
+                <element name="AccountLockoutReasonRgs">
+                    <empty/>
+                </element>
+                <element name="AgentCategoryTempRgs">
+                    <empty/>
+                </element>
+                <element name="AgentTempRgs">
+                    <data type="boolean"/>
+                </element>
+                <element name="Attributes">
+                    <empty/>
+                </element>
+                <element name="BackupUsers">
+                    <empty/>
+                </element>
+                <element name="BankAdressRgs">
+                    <empty/>
+                </element>
+                <element name="BankCodeRgs">
+                    <empty/>
+                </element>
+                <element name="BankNameFullRgs">
+                    <empty/>
+                </element>
+                <element name="BankPartnerIdRgs">
+                    <empty/>
+                </element>
+                <element name="CardIdRgs">
+                    <text/>
+                </element>
+                <ref name="Category"/>
+                <ref name="Contact"/>
+                <ref name="Credential"/>
+                <element name="DefaultCountry">
+                    <empty/>
+                </element>
+                <element name="DefaultPhoneCountry">
+                    <empty/>
+                </element>
+                <element name="Department">
+                    <empty/>
+                </element>
+                <element name="ExperienceLevel">
+                    <empty/>
+                </element>
+                <element name="ExternalUser">
+                    <data type="boolean"/>
+                </element>
+                <element name="IsTechnicalRgs">
+                    <data type="boolean"/>
+                </element>
+                <element name="JobTitle">
+                    <empty/>
+                </element>
+                <element name="LNRTempRgs">
+                    <empty/>
+                </element>
+                <ref name="Language"/>
+                <element name="Locale">
+                    <text/>
+                </element>
+                <ref name="ObfuscatedInternal"/>
+                <ref name="Organization"/>
+                <ref name="Regions"/>
+                <element name="RelatedAgencies">
+                    <empty/>
+                </element>
+                <element name="Roles">
+                    <zeroOrMore>
+                        <element name="UserRole">
+                            <attribute name="public-id">
+                                <data type="NMTOKEN"/>
+                            </attribute>
+                            <ref name="Role"/>
+                            <ref name="User"/>
+                        </element>
+                    </zeroOrMore>
+                </element>
+            </optional>
+            <optional>
+                <element name="SessionTimeoutSecs">
+                    <empty/>
+                </element>
+                <element name="ShowOrgAddressRgs">
+                    <data type="boolean"/>
+                </element>
+                <element name="SystemUserType">
+                    <text/>
+                </element>
+                <element name="TimeZone">
+                    <empty/>
+                </element>
+                <element name="UseOrgAddress">
+                    <data type="boolean"/>
+                </element>
+                <element name="UseProducerCodeSecurity">
+                    <data type="boolean"/>
+                </element>
+                <element name="UserAuthorityProfiles">
+                    <optional>
+                        <element name="UserAuthorityProfile">
+                            <attribute name="public-id">
+                                <data type="NMTOKEN"/>
+                            </attribute>
+                            <ref name="UWAuthorityProfile"/>
+                            <ref name="User"/>
+                        </element>
+                    </optional>
+                </element>
+            </optional>
+            <optional>
+                <element name="UserProducerCodes">
+                    <zeroOrMore>
+                        <element name="UserProducerCode">
+                            <attribute name="public-id">
+                                <data type="NMTOKEN"/>
+                            </attribute>
+                            <ref name="ProducerCode"/>
+                            <ref name="Role"/>
+                            <ref name="User"/>
+                        </element>
+                    </zeroOrMore>
+                </element>
+            </optional>
+            <optional>
+                <ref name="UserSettings"/>
+                <element name="UserType">
+                    <data type="NCName"/>
+                </element>
+                <element name="VacationStatus">
+                    <data type="NCName"/>
+                </element>
+                <ref name="ValidationLevel"/>
+            </optional>
+        </element>
+    </define>
+    <define name="AccountHolderCount">
+        <element name="AccountHolderCount">
+            <data type="integer"/>
+        </element>
+    </define>
+    <define name="AddressBookUID">
+        <element name="AddressBookUID">
+            <empty/>
+        </element>
+    </define>
+    <define name="ArchiveDate">
+        <element name="ArchiveDate">
+            <empty/>
+        </element>
+    </define>
+    <define name="ArchiveFailure">
+        <element name="ArchiveFailure">
+            <empty/>
+        </element>
+    </define>
+    <define name="ArchiveFailureDetails">
+        <element name="ArchiveFailureDetails">
+            <empty/>
+        </element>
+    </define>
+    <define name="ArchivePartition">
+        <element name="ArchivePartition">
+            <empty/>
+        </element>
+    </define>
+    <define name="ArchiveSchemaInfo">
+        <element name="ArchiveSchemaInfo">
+            <empty/>
+        </element>
+    </define>
+    <define name="ArchiveState">
+        <element name="ArchiveState">
+            <empty/>
+        </element>
+    </define>
+    <define name="AutoSync">
+        <element name="AutoSync">
+            <empty/>
+        </element>
+    </define>
+    <define name="BatchIdRgs">
+        <element name="BatchIdRgs">
+            <empty/>
+        </element>
+    </define>
+    <define name="BlackListTypeRgs">
+        <element name="BlackListTypeRgs">
+            <empty/>
+        </element>
+    </define>
+    <define name="CategoryScores">
+        <element name="CategoryScores">
+            <empty/>
+        </element>
+    </define>
+    <define name="ContactAddresses">
+        <element name="ContactAddresses">
+            <zeroOrMore>
+                <element name="ContactAddress">
+                    <attribute name="public-id">
+                        <data type="NMTOKEN"/>
+                    </attribute>
+                    <ref name="Address"/>
+                    <ref name="AddressBookUID"/>
+                    <element name="AddressIdDwh">
+                        <empty/>
+                    </element>
+                    <ref name="ArchivePartition"/>
+                    <ref name="Contact"/>
+                    <ref name="ContactIdDwh"/>
+                    <ref name="ExternalID"/>
+                    <ref name="IdDwh"/>
+                    <ref name="ObfuscatedInternal"/>
+                </element>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="CorrectionAllowed">
+        <element name="CorrectionAllowed">
+            <empty/>
+        </element>
+    </define>
+    <define name="CountryRgs">
+        <element name="CountryRgs">
+            <empty/>
+        </element>
+    </define>
+    <define name="DivisionCodeRgs">
+        <element name="DivisionCodeRgs">
+            <empty/>
+        </element>
+    </define>
+    <define name="DoNotDestroy">
+        <element name="DoNotDestroy">
+            <data type="boolean"/>
+        </element>
+    </define>
+    <define name="DwhUploadedRgs">
+        <element name="DwhUploadedRgs">
+            <data type="boolean"/>
+        </element>
+    </define>
+    <define name="EmailAddress1">
+        <element name="EmailAddress1">
+            <text/>
+        </element>
+    </define>
+    <define name="EmailAddress2">
+        <element name="EmailAddress2">
+            <text/>
+        </element>
+    </define>
+    <define name="ExcludeReason">
+        <element name="ExcludeReason">
+            <empty/>
+        </element>
+    </define>
+    <define name="ExcludedFromArchive">
+        <element name="ExcludedFromArchive">
+            <empty/>
+        </element>
+    </define>
+    <define name="ExternalID">
+        <element name="ExternalID">
+            <data type="anyURI"/>
+        </element>
+    </define>
+    <define name="ExternalVersion">
+        <element name="ExternalVersion">
+            <data type="integer"/>
+        </element>
+    </define>
+    <define name="FaxPhone">
+        <element name="FaxPhone">
+            <empty/>
+        </element>
+    </define>
+    <define name="FaxPhoneCountry">
+        <element name="FaxPhoneCountry">
+            <empty/>
+        </element>
+    </define>
+    <define name="FaxPhoneExtension">
+        <element name="FaxPhoneExtension">
+            <empty/>
+        </element>
+    </define>
+    <define name="HomePhone">
+        <element name="HomePhone">
+            <empty/>
+        </element>
+    </define>
+    <define name="HomePhoneCountry">
+        <element name="HomePhoneCountry">
+            <empty/>
+        </element>
+    </define>
+    <define name="HomePhoneExtension">
+        <element name="HomePhoneExtension">
+            <empty/>
+        </element>
+    </define>
+    <define name="INNRgs">
+        <element name="INNRgs">
+            <text/>
+        </element>
+    </define>
+    <define name="IdDwh">
+        <element name="IdDwh">
+            <empty/>
+        </element>
+    </define>
+    <define name="IdRgs">
+        <element name="IdRgs">
+            <empty/>
+        </element>
+    </define>
+    <define name="InBlackListRgs">
+        <element name="InBlackListRgs">
+            <empty/>
+        </element>
+    </define>
+    <define name="LastUpdateTime">
+        <element name="LastUpdateTime">
+            <text/>
+        </element>
+    </define>
+    <define name="LnrDwhRgs">
+        <element name="LnrDwhRgs">
+            <empty/>
+        </element>
+    </define>
+    <define name="LoadRelatedContacts">
+        <element name="LoadRelatedContacts">
+            <data type="boolean"/>
+        </element>
+    </define>
+    <define name="Name">
+        <element name="Name">
+            <text/>
+        </element>
+    </define>
+    <define name="NameKanji">
+        <element name="NameKanji">
+            <empty/>
+        </element>
+    </define>
+    <define name="NameRgs">
+        <element name="NameRgs">
+            <text/>
+        </element>
+    </define>
+    <define name="Notes">
+        <element name="Notes">
+            <empty/>
+        </element>
+    </define>
+    <define name="OPFRgs">
+        <element name="OPFRgs">
+            <text/>
+        </element>
+    </define>
+    <define name="ObfuscatedInternal">
+        <element name="ObfuscatedInternal">
+            <data type="boolean"/>
+        </element>
+    </define>
+    <define name="Preferred">
+        <element name="Preferred">
+            <data type="boolean"/>
+        </element>
+    </define>
+    <define name="PreferredCurrency">
+        <element name="PreferredCurrency">
+            <empty/>
+        </element>
+    </define>
+    <define name="PreferredSettlementCurrency">
+        <element name="PreferredSettlementCurrency">
+            <empty/>
+        </element>
+    </define>
+    <define name="PrimaryAddress">
+        <element name="PrimaryAddress">
+            <optional>
+                <attribute name="public-id">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+        </element>
+    </define>
+    <define name="PrimaryContactPhoneRgs">
+        <element name="PrimaryContactPhoneRgs">
+            <empty/>
+        </element>
+    </define>
+    <define name="PrimaryLanguage">
+        <element name="PrimaryLanguage">
+            <text/>
+        </element>
+    </define>
+    <define name="PrimaryLocale">
+        <element name="PrimaryLocale">
+            <text/>
+        </element>
+    </define>
+    <define name="PrimaryMailRgs">
+        <element name="PrimaryMailRgs">
+            <empty/>
+        </element>
+    </define>
+    <define name="PrimaryPhone">
+        <element name="PrimaryPhone">
+            <text/>
+        </element>
+    </define>
+    <define name="RegionCodeRgs">
+        <element name="RegionCodeRgs">
+            <empty/>
+        </element>
+    </define>
+    <define name="RegistrationAddressRgs">
+        <element name="RegistrationAddressRgs">
+            <empty/>
+        </element>
+    </define>
+    <define name="RelevanceDateRgs">
+        <element name="RelevanceDateRgs">
+            <text/>
+        </element>
+    </define>
+    <define name="ResidentRgs">
+        <element name="ResidentRgs">
+            <text/>
+        </element>
+    </define>
+    <define name="SNILSRgs">
+        <element name="SNILSRgs">
+            <text/>
+        </element>
+    </define>
+    <define name="Score">
+        <element name="Score">
+            <empty/>
+        </element>
+    </define>
+    <define name="Subtype">
+        <element name="Subtype">
+            <data type="NCName"/>
+        </element>
+    </define>
+    <define name="Tags">
+        <element name="Tags">
+            <element name="ContactTag">
+                <attribute name="public-id">
+                    <data type="NMTOKEN"/>
+                </attribute>
+                <ref name="AddressBookUID"/>
+                <ref name="ArchivePartition"/>
+                <ref name="Contact"/>
+                <ref name="ObfuscatedInternal"/>
+                <ref name="Type"/>
+            </element>
+        </element>
+    </define>
+    <define name="TaxID">
+        <element name="TaxID">
+            <empty/>
+        </element>
+    </define>
+    <define name="TaxStatus">
+        <element name="TaxStatus">
+            <data type="NCName"/>
+        </element>
+    </define>
+    <define name="TemporaryLastUpdateTime">
+        <element name="TemporaryLastUpdateTime">
+            <empty/>
+        </element>
+    </define>
+    <define name="TrustContactRgs">
+        <element name="TrustContactRgs">
+            <data type="boolean"/>
+        </element>
+    </define>
+    <define name="ValidationLevel">
+        <element name="ValidationLevel">
+            <text/>
+        </element>
+    </define>
+    <define name="VendorNumber">
+        <element name="VendorNumber">
+            <empty/>
+        </element>
+    </define>
+    <define name="VendorType">
+        <element name="VendorType">
+            <empty/>
+        </element>
+    </define>
+    <define name="WithholdingRate">
+        <element name="WithholdingRate">
+            <empty/>
+        </element>
+    </define>
+    <define name="WorkPhone">
+        <element name="WorkPhone">
+            <empty/>
+        </element>
+    </define>
+    <define name="WorkPhoneCountry">
+        <element name="WorkPhoneCountry">
+            <empty/>
+        </element>
+    </define>
+    <define name="WorkPhoneExtension">
+        <element name="WorkPhoneExtension">
+            <empty/>
+        </element>
+    </define>
+    <define name="Credential">
+        <element name="Credential">
+            <attribute name="public-id">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <optional>
+                <ref name="Active"/>
+                <element name="FailedAttempts">
+                    <data type="integer"/>
+                </element>
+                <element name="FailedTime">
+                    <empty/>
+                </element>
+                <element name="LockDate">
+                    <empty/>
+                </element>
+                <ref name="ObfuscatedInternal"/>
+                <element name="Password">
+                    <text/>
+                </element>
+                <element name="UserName">
+                    <data type="NMTOKEN"/>
+                </element>
+            </optional>
+        </element>
+    </define>
+    <define name="Organization">
+        <element name="Organization">
+            <attribute name="public-id">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <optional>
+                <element name="AgencyBillPlans">
+                    <empty/>
+                </element>
+                <element name="BranchID_Rgs">
+                    <empty/>
+                </element>
+                <element name="Carrier">
+                    <data type="boolean"/>
+                </element>
+                <ref name="Contact"/>
+                <element name="INN_Rgs">
+                    <empty/>
+                </element>
+                <element name="KPP_Rgs">
+                    <empty/>
+                </element>
+                <element name="MasterAdmin">
+                    <data type="boolean"/>
+                </element>
+                <ref name="Name"/>
+                <ref name="NameKanji"/>
+                <element name="PartnerID_Rgs">
+                    <empty/>
+                </element>
+                <ref name="ProducerStatus"/>
+                <element name="RootGroup">
+                    <attribute name="public-id">
+                        <data type="NMTOKEN"/>
+                    </attribute>
+                </element>
+                <element name="SalesChannel_Rgs">
+                    <empty/>
+                </element>
+                <element name="Tier">
+                    <empty/>
+                </element>
+                <ref name="Type"/>
+            </optional>
+        </element>
+    </define>
+    <define name="Address">
+        <element name="Address">
+            <attribute name="public-id">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <optional>
+                <element name="ActiveAddressBoxRgs">
+                    <data type="boolean"/>
+                </element>
+                <ref name="AddressBookUID"/>
+                <element name="AddressLine1">
+                    <text/>
+                </element>
+                <element name="AddressLine1Kanji">
+                    <empty/>
+                </element>
+                <element name="AddressLine2">
+                    <empty/>
+                </element>
+                <element name="AddressLine2Kanji">
+                    <empty/>
+                </element>
+                <element name="AddressLine3">
+                    <empty/>
+                </element>
+                <element name="AddressType">
+                    <text/>
+                </element>
+                <element name="ApartmentRgs">
+                    <empty/>
+                </element>
+                <ref name="ArchivePartition"/>
+                <element name="AreaRgs">
+                    <empty/>
+                </element>
+                <element name="AreaTypeRgs">
+                    <empty/>
+                </element>
+                <element name="BatchGeocode">
+                    <data type="boolean"/>
+                </element>
+                <element name="BuildingRgs">
+                    <empty/>
+                </element>
+                <element name="CEDEX">
+                    <empty/>
+                </element>
+                <element name="CEDEXBureau">
+                    <empty/>
+                </element>
+                <element name="CheckApartmentRgs">
+                    <empty/>
+                </element>
+                <element name="CheckBuildingRgs">
+                    <empty/>
+                </element>
+                <element name="CheckCommunityRgs">
+                    <empty/>
+                </element>
+                <element name="CheckStreetRgs">
+                    <empty/>
+                </element>
+                <element name="City">
+                    <text/>
+                </element>
+                <element name="CityKanji">
+                    <empty/>
+                </element>
+                <element name="CityTypeRgs">
+                    <empty/>
+                </element>
+                <element name="CodeCLADRRgs">
+                    <empty/>
+                </element>
+                <element name="CommunityRgs">
+                    <empty/>
+                </element>
+                <element name="ConstructionRgs">
+                    <empty/>
+                </element>
+                <ref name="ContactIdDwh"/>
+                <element name="Country">
+                    <text/>
+                </element>
+                <ref name="CountryRgs"/>
+                <element name="County">
+                    <empty/>
+                </element>
+                <ref name="Description"/>
+                <ref name="ExternalID"/>
+                <element name="FIASApartmentRgs">
+                    <empty/>
+                </element>
+                <element name="FIASAreaIdRgs">
+                    <empty/>
+                </element>
+                <element name="FIASAreaRgs">
+                    <empty/>
+                </element>
+                <element name="FIASBuildingRgs">
+                    <empty/>
+                </element>
+                <element name="FIASCityIdRgs">
+                    <empty/>
+                </element>
+                <element name="FIASCityRgs">
+                    <empty/>
+                </element>
+                <element name="FIASCommunityIdRgs">
+                    <empty/>
+                </element>
+                <element name="FIASCommunityRgs">
+                    <empty/>
+                </element>
+                <element name="FIASConstructionRgs">
+                    <empty/>
+                </element>
+                <element name="FIASCountryRgs">
+                    <empty/>
+                </element>
+                <element name="FIASHousingRgs">
+                    <empty/>
+                </element>
+                <element name="FIASLocalityIdRgs">
+                    <empty/>
+                </element>
+                <element name="FIASLocalityRgs">
+                    <empty/>
+                </element>
+                <element name="FIASPostalCodeRgs">
+                    <empty/>
+                </element>
+                <element name="FIASRegionIdRgs">
+                    <empty/>
+                </element>
+                <element name="FIASRegionRgs">
+                    <empty/>
+                </element>
+                <element name="FIASRoomRgs">
+                    <empty/>
+                </element>
+                <element name="FIASStreetIdRgs">
+                    <empty/>
+                </element>
+                <element name="FIASStreetRgs">
+                    <empty/>
+                </element>
+                <element name="FIASStreetTypeRgs">
+                    <empty/>
+                </element>
+                <element name="GeocodeStatus">
+                    <data type="NCName"/>
+                </element>
+                <element name="HousingRgs">
+                    <empty/>
+                </element>
+                <ref name="IdDwh"/>
+                <ref name="LastUpdateTime"/>
+                <element name="LinkedAddress">
+                    <empty/>
+                </element>
+                <element name="LocalityRgs">
+                    <empty/>
+                </element>
+                <element name="LocalityTypeRgs">
+                    <empty/>
+                </element>
+                <ref name="ObfuscatedInternal"/>
+                <element name="PostalCode">
+                    <empty/>
+                </element>
+                <element name="PostalFromDictRgs">
+                    <empty/>
+                </element>
+                <element name="Referenced">
+                    <data type="boolean"/>
+                </element>
+                <element name="RegionRgs">
+                    <empty/>
+                </element>
+                <element name="RegionTypeRgs">
+                    <empty/>
+                </element>
+                <ref name="RelevanceDateRgs"/>
+                <element name="RoomRgs">
+                    <empty/>
+                </element>
+                <element name="SpatialPoint">
+                    <empty/>
+                </element>
+                <element name="State">
+                    <empty/>
+                </element>
+                <element name="StreetRgs">
+                    <empty/>
+                </element>
+                <element name="StreetTypeRgs">
+                    <empty/>
+                </element>
+                <ref name="Subtype"/>
+                <ref name="TemporaryLastUpdateTime"/>
+                <element name="ValidUntil">
+                    <empty/>
+                </element>
+            </optional>
+        </element>
+    </define>
+    <define name="Role">
+        <element name="Role">
+            <attribute name="public-id">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <optional>
+                <element name="CarrierInternalRole">
+                    <data type="boolean"/>
+                </element>
+                <ref name="Description"/>
+                <ref name="Description_L10N_ARRAY"/>
+                <ref name="Name"/>
+                <ref name="Name_L10N_ARRAY"/>
+                <element name="Privileges">
+                    <zeroOrMore>
+                        <element name="RolePrivilege">
+                            <attribute name="public-id">
+                                <data type="NMTOKEN"/>
+                            </attribute>
+                            <element name="Permission">
+                                <data type="NCName"/>
+                            </element>
+                            <ref name="Role"/>
+                        </element>
+                    </zeroOrMore>
+                </element>
+            </optional>
+            <optional>
+                <element name="RoleType">
+                    <data type="NCName"/>
+                </element>
+            </optional>
+        </element>
+    </define>
+    <define name="SecurityZone">
+        <element name="SecurityZone">
+            <attribute name="public-id">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <optional>
+                <ref name="Description"/>
+                <ref name="Description_L10N_ARRAY"/>
+                <ref name="Name"/>
+                <ref name="Name_L10N_ARRAY"/>
+            </optional>
+        </element>
+    </define>
+    <define name="Group">
+        <element name="Group">
+            <attribute name="public-id">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <optional>
+                <ref name="Active"/>
+                <element name="AddressRgs">
+                    <text/>
+                </element>
+                <element name="BranchCode">
+                    <empty/>
+                </element>
+                <element name="CityRgs">
+                    <text/>
+                </element>
+                <element name="CodeBOSSRgs">
+                    <text/>
+                </element>
+                <element name="CodeSKKRgs">
+                    <text/>
+                </element>
+                <ref name="Description"/>
+                <ref name="Description_L10N_ARRAY"/>
+                <element name="EndDateRgs">
+                    <text/>
+                </element>
+                <element name="GroupProducerCodes">
+                    <optional>
+                        <element name="GroupProducerCode">
+                            <attribute name="public-id">
+                                <data type="NMTOKEN"/>
+                            </attribute>
+                            <ref name="Group"/>
+                            <ref name="ProducerCode"/>
+                        </element>
+                    </optional>
+                </element>
+            </optional>
+            <optional>
+                <element name="GroupType">
+                    <data type="NCName"/>
+                </element>
+                <ref name="INNRgs"/>
+                <element name="KPPRgs">
+                    <text/>
+                </element>
+                <ref name="LoadFactor"/>
+                <element name="MAGLnrRgs">
+                    <text/>
+                </element>
+                <ref name="Name"/>
+                <element name="NameBOSSRgs">
+                    <text/>
+                </element>
+                <element name="NameBOSSRgs_L10N_ARRAY">
+                    <zeroOrMore>
+                        <element name="Group_NameBOSSRgs_L10N">
+                            <attribute name="public-id">
+                                <data type="NMTOKEN"/>
+                            </attribute>
+                            <ref name="Language"/>
+                            <ref name="Owner"/>
+                            <ref name="Value"/>
+                        </element>
+                    </zeroOrMore>
+                </element>
+                <ref name="NameKanji"/>
+                <ref name="Name_L10N_ARRAY"/>
+                <element name="OKTMORgs">
+                    <text/>
+                </element>
+                <ref name="Organization"/>
+                <ref name="Parent"/>
+                <ref name="Regions"/>
+            </optional>
+            <optional>
+                <ref name="SecurityZone"/>
+                <element name="StartDateRgs">
+                    <text/>
+                </element>
+                <element name="Supervisor">
+                    <optional>
+                        <attribute name="public-id">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                    </optional>
+                </element>
+                <element name="TimeShiftRgs">
+                    <text/>
+                </element>
+                <element name="Users">
+                    <zeroOrMore>
+                        <element name="GroupUser">
+                            <attribute name="public-id">
+                                <data type="NMTOKEN"/>
+                            </attribute>
+                            <ref name="Group"/>
+                            <ref name="LoadFactor"/>
+                            <element name="LoadFactorType">
+                                <empty/>
+                            </element>
+                            <element name="Manager">
+                                <data type="boolean"/>
+                            </element>
+                            <element name="Member">
+                                <data type="boolean"/>
+                            </element>
+                            <element name="TextField1">
+                                <empty/>
+                            </element>
+                            <element name="TextField2">
+                                <empty/>
+                            </element>
+                            <element name="TextField3">
+                                <empty/>
+                            </element>
+                            <ref name="User"/>
+                        </element>
+                    </zeroOrMore>
+                </element>
+            </optional>
+            <optional>
+                <ref name="ValidationLevel"/>
+                <element name="VirtualGroupRgs">
+                    <data type="boolean"/>
+                </element>
+                <element name="VisibilityZone">
+                    <empty/>
+                </element>
+                <element name="WorldVisible">
+                    <data type="boolean"/>
+                </element>
+            </optional>
+        </element>
+    </define>
+    <define name="ProducerCode">
+        <element name="ProducerCode">
+            <attribute name="public-id">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <optional>
+                <ref name="Address"/>
+                <element name="AddressPublicID">
+                    <empty/>
+                </element>
+                <element name="AffinityGroupProducerCodes">
+                    <empty/>
+                </element>
+                <element name="AppointmentDate">
+                    <empty/>
+                </element>
+                <element name="Branch">
+                    <empty/>
+                </element>
+                <element name="CardIDRgs">
+                    <text/>
+                </element>
+                <ref name="Code"/>
+                <element name="CommissionPlans">
+                    <empty/>
+                </element>
+                <ref name="Description"/>
+                <ref name="Description_L10N_ARRAY"/>
+                <element name="EMailAddresRgs">
+                    <text/>
+                </element>
+                <ref name="INNRgs"/>
+                <element name="LNRRgs">
+                    <text/>
+                </element>
+                <element name="MiddleNameRgs">
+                    <text/>
+                </element>
+                <element name="NameOfSubdivisionRgs">
+                    <text/>
+                </element>
+                <ref name="NameRgs"/>
+                <ref name="Organization"/>
+                <ref name="Parent"/>
+                <element name="PhoneNumberRgs">
+                    <text/>
+                </element>
+                <element name="PreferredUnderwriter">
+                    <empty/>
+                </element>
+                <element name="ProducerCodeRoles">
+                    <zeroOrMore>
+                        <element name="ProducerCodeRole">
+                            <attribute name="public-id">
+                                <data type="NMTOKEN"/>
+                            </attribute>
+                            <ref name="ProducerCode"/>
+                            <ref name="Role"/>
+                        </element>
+                    </zeroOrMore>
+                </element>
+            </optional>
+            <optional>
+                <ref name="ProducerStatus"/>
+                <element name="SKKCodeRgs">
+                    <text/>
+                </element>
+                <ref name="SNILSRgs"/>
+                <element name="SalesChannelRgs">
+                    <text/>
+                </element>
+                <element name="SalesGroupRgs">
+                    <text/>
+                </element>
+                <element name="SalesPointRgs">
+                    <text/>
+                </element>
+                <element name="SurnameRgs">
+                    <text/>
+                </element>
+                <element name="TerminationDate">
+                    <empty/>
+                </element>
+            </optional>
+        </element>
+    </define>
+    <define name="Description">
+        <element name="Description">
+            <text/>
+        </element>
+    </define>
+    <define name="UserSettings">
+        <element name="UserSettings">
+            <attribute name="public-id">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <optional>
+                <element name="CancelAlertDismiss">
+                    <empty/>
+                </element>
+                <element name="EmailOnActAssign">
+                    <empty/>
+                </element>
+                <element name="LastAccounts">
+                    <empty/>
+                </element>
+                <element name="LastContacts">
+                    <empty/>
+                </element>
+                <element name="LastPolicies">
+                    <empty/>
+                </element>
+                <element name="MaxRecentAccounts">
+                    <empty/>
+                </element>
+                <element name="MaxRecentContacts">
+                    <empty/>
+                </element>
+                <element name="MaxRecentPoliciesAndJobs">
+                    <empty/>
+                </element>
+                <element name="PrintMargins">
+                    <empty/>
+                </element>
+                <element name="PrintPageNums">
+                    <empty/>
+                </element>
+                <element name="RotateTables">
+                    <empty/>
+                </element>
+                <element name="ShowPrintPreview">
+                    <empty/>
+                </element>
+                <element name="StartupPage">
+                    <text/>
+                </element>
+            </optional>
+        </element>
+    </define>
+    <define name="Category">
+        <element name="Category">
+            <text/>
+        </element>
+    </define>
+    <define name="Code">
+        <element name="Code">
+            <text/>
+        </element>
+    </define>
+    <define name="Description_L10N_ARRAY">
+        <element name="Description_L10N_ARRAY">
+            <choice>
+                <element name="SecurityZone_Description_L10N">
+                    <attribute name="public-id">
+                        <data type="NMTOKEN"/>
+                    </attribute>
+                    <ref name="Language"/>
+                    <ref name="Owner"/>
+                    <ref name="Value"/>
+                </element>
+                <zeroOrMore>
+                    <element name="ProducerCode_Description_L10N">
+                        <attribute name="public-id">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                        <ref name="Language"/>
+                        <ref name="Owner"/>
+                        <ref name="Value"/>
+                    </element>
+                </zeroOrMore>
+                <zeroOrMore>
+                    <element name="Role_Description_L10N">
+                        <attribute name="public-id">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                        <ref name="Language"/>
+                        <ref name="Owner"/>
+                        <ref name="Value"/>
+                    </element>
+                </zeroOrMore>
+                <zeroOrMore>
+                    <element name="ActivityPattern_Description_L10N">
+                        <attribute name="public-id">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                        <ref name="Language"/>
+                        <ref name="Owner"/>
+                        <ref name="Value"/>
+                    </element>
+                </zeroOrMore>
+            </choice>
+        </element>
+    </define>
+    <define name="Language">
+        <element name="Language">
+            <text/>
+        </element>
+    </define>
+    <define name="Owner">
+        <element name="Owner">
+            <attribute name="public-id">
+                <data type="NMTOKEN"/>
+            </attribute>
+        </element>
+    </define>
+    <define name="Value">
+        <element name="Value">
+            <text/>
+        </element>
+    </define>
+    <define name="Type">
+        <element name="Type">
+            <data type="NCName"/>
+        </element>
+    </define>
+    <define name="Region">
+        <element name="Region">
+            <attribute name="public-id">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <optional>
+                <ref name="Code"/>
+                <ref name="Name"/>
+                <ref name="Name_L10N_ARRAY"/>
+                <element name="RegionZones">
+                    <empty/>
+                </element>
+            </optional>
+        </element>
+    </define>
+    <define name="UWAuthorityProfile">
+        <element name="UWAuthorityProfile">
+            <attribute name="public-id">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <optional>
+                <choice>
+                    <group>
+                        <ref name="Description"/>
+                        <ref name="Description_L10N_ARRAY"/>
+                        <element name="Grants">
+                            <oneOrMore>
+                                <element name="UWAuthorityGrant">
+                                    <attribute name="public-id">
+                                        <data type="NMTOKEN"/>
+                                    </attribute>
+                                    <element name="ApproveAnyValue">
+                                        <data type="boolean"/>
+                                    </element>
+                                    <element name="IssueType">
+                                        <attribute name="public-id">
+                                            <data type="anyURI"/>
+                                        </attribute>
+                                    </element>
+                                    <ref name="UWAuthorityProfile"/>
+                                    <ref name="Value"/>
+                                </element>
+                            </oneOrMore>
+                        </element>
+                    </group>
+                    <group>
+                        <ref name="Name"/>
+                        <ref name="Name_L10N_ARRAY"/>
+                    </group>
+                </choice>
+            </optional>
+        </element>
+    </define>
+    <define name="Name_L10N_ARRAY">
+        <element name="Name_L10N_ARRAY">
+            <choice>
+                <zeroOrMore>
+                    <element name="Role_Name_L10N">
+                        <attribute name="public-id">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                        <ref name="Language"/>
+                        <ref name="Owner"/>
+                        <ref name="Value"/>
+                    </element>
+                </zeroOrMore>
+                <zeroOrMore>
+                    <element name="Group_Name_L10N">
+                        <attribute name="public-id">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                        <ref name="Language"/>
+                        <ref name="Owner"/>
+                        <ref name="Value"/>
+                    </element>
+                </zeroOrMore>
+                <zeroOrMore>
+                    <element name="SecurityZone_Name_L10N">
+                        <attribute name="public-id">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                        <ref name="Language"/>
+                        <ref name="Owner"/>
+                        <ref name="Value"/>
+                    </element>
+                </zeroOrMore>
+            </choice>
+        </element>
+    </define>
+    <define name="Contact">
+        <element name="Contact">
+            <attribute name="public-id">
+                <data type="NMTOKEN"/>
+            </attribute>
+        </element>
+    </define>
+    <define name="Regions">
+        <element name="Regions">
+            <optional>
+                <element name="GroupRegion">
+                    <attribute name="public-id">
+                        <data type="NMTOKEN"/>
+                    </attribute>
+                    <ref name="Group"/>
+                    <ref name="Region"/>
+                </element>
+            </optional>
+        </element>
+    </define>
+    <define name="ContactIdDwh">
+        <element name="ContactIdDwh">
+            <empty/>
+        </element>
+    </define>
+    <define name="Active">
+        <element name="Active">
+            <text/>
+        </element>
+    </define>
+    <define name="ProducerStatus">
+        <element name="ProducerStatus">
+            <data type="NCName"/>
+        </element>
+    </define>
+    <define name="LoadFactor">
+        <element name="LoadFactor">
+            <text/>
+        </element>
+    </define>
+    <define name="Parent">
+        <element name="Parent">
+            <optional>
+                <attribute name="public-id">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+        </element>
+    </define>
+</grammar>
